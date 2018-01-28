@@ -15,7 +15,7 @@ Select two or more of the predefined AIs and alter other parameters as desired. 
 
 ## Add your own AI
 
-Implement the interface ```com.frederikgossen.backgammon.ai.AI''' or extend the abstract classes ```com.frederikgossen.backgammon.ai.BoardScoringAI''' or ```com.frederikgossen.backgammon.ai.MoveScoringAI''' and define the behaviour of your AI programmatically. 
+Implement the interface ```com.frederikgossen.backgammon.ai.AI``` or extend the abstract classes ```com.frederikgossen.backgammon.ai.BoardScoringAI``` or ```com.frederikgossen.backgammon.ai.MoveScoringAI``` and define the behaviour of your AI programmatically. 
 
 ### Load your AI at runtime 
 
@@ -23,4 +23,4 @@ You can compile your AI with all classes it depends on and export it as a JAR fi
 
 ### Add your AI as a Default AI 
 
-Add your AI class to the array of default AIs in ```com.frederikgossen.backgammon.ai.MenuScreenAILoader'''. Your AI will appear in the list of selectable AIs when you start the AI tournament. 
+Add your AI class to the array of default AIs in ```com.frederikgossen.backgammon.ai.MenuScreenAILoader```. Your AI will appear in the list of selectable AIs when you start the AI tournament. 

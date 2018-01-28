@@ -30,8 +30,15 @@ public class MenuScreen extends JFrame {
 
 	private static final long serialVersionUID = 1141072142930226119L;
 
+	/* Constants for default values */
+	private static final boolean DEFAULT_SHOW_MOVES = true;
+	private static final String DEFAULT_DURATION_PER_MOVE_IN_MS = "500";
+	private static final String DEFAULT_NUMBER_OF_GAMES = "1";
+
+	/* Manages available AI classes */
 	private MenuScreenAILoader aiLoader;
 
+	/* UI elements */
 	private JPanel jPanel;
 	private JButton btnLoadAIs;
 	private JList<String> lstAis;
@@ -47,6 +54,7 @@ public class MenuScreen extends JFrame {
 
 		aiLoader = new MenuScreenAILoader();
 
+		/* Build the UI */
 		jPanel = new JPanel();
 		setContentPane(jPanel);
 		jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
@@ -63,7 +71,7 @@ public class MenuScreen extends JFrame {
 		jPanel.add(btnLoadAIs);
 		jPanel.add(new JLabel("Number of Games"));
 		tfNumberOfGames = new JTextField();
-		tfNumberOfGames.setText("100000");
+		tfNumberOfGames.setText(DEFAULT_NUMBER_OF_GAMES);
 		jPanel.add(tfNumberOfGames);
 		cbShowMoves = new JCheckBox("Show moves");
 		cbShowMoves.addActionListener(new ActionListener() {
@@ -71,12 +79,12 @@ public class MenuScreen extends JFrame {
 				tfDurationPerMoveInMs.setEnabled(cbShowMoves.isSelected());
 			}
 		});
-		cbShowMoves.setSelected(false);
+		cbShowMoves.setSelected(DEFAULT_SHOW_MOVES);
 		jPanel.add(cbShowMoves);
 		jPanel.add(new JLabel("Duration per move in ms"));
 		tfDurationPerMoveInMs = new JTextField();
 		tfDurationPerMoveInMs.setEnabled(false);
-		tfDurationPerMoveInMs.setText("500");
+		tfDurationPerMoveInMs.setText(DEFAULT_DURATION_PER_MOVE_IN_MS);
 		jPanel.add(tfDurationPerMoveInMs);
 		btnStart = new JButton("Start");
 		jPanel.add(btnStart);
